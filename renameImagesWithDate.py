@@ -4,6 +4,6 @@ from datetime import datetime
 for filename in os.listdir("."):
 	if filename.startswith("IMG_"):
 		time = os.path.getmtime(filename)
-		prefix = datetime.fromtimestamp(time).strftime('%Y %m %d_')
+		prefix = datetime.fromtimestamp(time).strftime('%Y %m %d ')
 		newName = prefix + filename
 		os.rename(filename, newName)
