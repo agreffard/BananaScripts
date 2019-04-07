@@ -36,6 +36,15 @@ See my other repository [thecolorsofnewyorkcity](https://github.com/agreffard/th
 
 ![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/groovyscripts/550stripes/result_final.jpg)
 
+## okgo.py
+
+Extremely experimental project.
+
+First attempt at recreating the [OK GO - WTF?](https://www.youtube.com/watch?v=12zJw9varYE) effet without green screen (using only background extraction).
+
+Interesting first result, to be continued.
+
+![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/okgo.jpg)
 
 ## discodiscoyeahyeahyeah.py
 
@@ -46,8 +55,6 @@ Generates moving fireworks of multiple series of disco balls of random colors.
 Just for fun.
 
 ![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/discoFireworks.jpg)
-
-
 _____________________
 
 
