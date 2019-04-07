@@ -14,7 +14,6 @@ Automatically upload images to my [365 photo project](https://agreffard-nyc.tumb
 ## groovyscripts: experimantal projects
 
 ## timeRemap.py
-
 Experimental code for time remap from webcam using OpenCV.
 
 Inspired from [Anamorphose temporelle - Adrien M & Claire B](https://vimeo.com/7878518)
@@ -36,6 +35,18 @@ Final result: https://agreffard.github.io/thecolorsofnewyorkcity/
 See my other repository [thecolorsofnewyorkcity](https://github.com/agreffard/thecolorsofnewyorkcity).
 
 ![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/groovyscripts/550stripes/result_final.jpg)
+
+
+## discodiscoyeahyeahyeah.py
+
+Extremely experimental project. 70's inspired.
+
+Generates moving fireworks of multiple series of disco balls of random colors.
+
+Just for fun.
+
+![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/discoFireworks.jpg)
+
 
 _____________________
 
