@@ -3,24 +3,24 @@ A bunch of experimental code and time saver scripts.
 
 ## tools: time saver scripts
 
-### renameImagesWithDate.py
+### [renameImagesWithDate.py](https://github.com/agreffard/GroovyScripts/blob/master/tools/renameImagesWithDate.py)
 
 Rename all images in current directory by adding the date before the original file name.
 
-### pytumblr
+### [pytumblr/](https://github.com/agreffard/GroovyScripts/tree/master/tools/pytumblr)
 
 Automatically upload images to my [365 photo project](https://agreffard-nyc.tumblr.com/) using the [PyTumblr API](https://github.com/tumblr/pytumblr).
 
 ## groovyscripts: experimantal projects
 
-## timeRemap.py
+## [timeRemap.py](https://github.com/agreffard/GroovyScripts/blob/master/groovyscripts/timeRemap.py)
 Experimental code for time remap from webcam using OpenCV.
 
 Inspired from [Anamorphose temporelle - Adrien M & Claire B](https://vimeo.com/7878518)
 
 ![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/adrienmclaireb.jpg)
 
-## 550 stripes
+## [550stripes/](https://github.com/agreffard/GroovyScripts/tree/master/groovyscripts/550stripes)
 
 Tools to build the final image of my 365 project, representing all 550 images in one.
 
@@ -36,7 +36,7 @@ See my other repository [thecolorsofnewyorkcity](https://github.com/agreffard/th
 
 ![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/groovyscripts/550stripes/result_final.jpg)
 
-## okgo.py
+## [okgo.py](https://github.com/agreffard/GroovyScripts/blob/master/groovyscripts/okgo.py)
 
 Extremely experimental project.
 
@@ -46,7 +46,7 @@ Interesting first result, to be continued.
 
 ![alt text](https://raw.githubusercontent.com/agreffard/GroovyScripts/master/okgo.jpg)
 
-## discodiscoyeahyeahyeah.py
+## [discodiscoyeahyeahyeah.py](https://github.com/agreffard/GroovyScripts/blob/master/groovyscripts/discodiscoyeahyeahyeah.py)
 
 Extremely experimental project. 70's inspired.
 
