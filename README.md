@@ -1,5 +1,7 @@
-# GroovyScripts
+# BananaScripts
 A bunch of experimental code and time saver scripts.
+
+Because bananana, bananana, banana scripts, hm!
 
 ## tools: time saver scripts
 
