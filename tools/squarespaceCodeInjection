@@ -1,0 +1,96 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer="defer">
+$(function() {
+    let searchParams = new URLSearchParams(window.location.search)
+    if (searchParams.has('testlang')) {
+        // https://www.bradgood.net/articles/multi-language-content-on-any-squarespace-template
+        /* SETUP MULTI-LANGUAGE */
+        var defaultLanguage = 'en';
+        var lang = location.pathname.split("/")[1];
+        var defaultClass = 'lang-'+defaultLanguage+'';
+        var itemParent = "nav [class*='collection'],nav [class*='folder'],nav [class*='index'],nav [class*='group']";
+        if (lang == "" || lang.length > 2 ){
+            var lang = defaultLanguage;
+        }
+
+        /* ADD LANGUAGE CLASSES */
+        $('a[href="/"]').addClass('lang-'+defaultLanguage+'').parents(itemParent).addClass('lang-'+defaultLanguage+'');
+        $('nav a:link:not([href^="http://"]):not([href^="https://"])').each(function () {
+        var langType = $(this).attr('href').split("/")[1];
+        var multiLanguageClass = 'multilanguage lang-' + langType + '';
+        if (undefined !== langType && langType.length <= 2) 
+            $(this).addClass(multiLanguageClass).parents(itemParent).addClass(multiLanguageClass);
+        });
+        $('nav button').each(function () {
+        var langTypeFolder = $(this).attr('data-controller-folder-toggle').split("/")[0];
+        var multiLanguageClass = 'multilanguage lang-' + langTypeFolder + '';
+        if (undefined !== langTypeFolder && langTypeFolder.length <= 2) 
+            $(this).addClass(multiLanguageClass);
+        });
+
+        /* HOMEPAGE-LOGO LINKS TO PROPER LANGUAGE HOMEPAGE */
+        //if (lang == "es") {
+        //  $('a[href="/"]').attr("href", "/es/inicio/");
+        //}
+
+        /* ADD EXCLUSION NAV ITEMS */
+        $('.exclude-me,.exclude-me a').addClass('exclude');
+        $('.sqs-svg-icon--list a,.SocialLinks-link').addClass('exclude');
+
+        /* REMOVE OTHER LANGUAGES AND KEEP EXCLUDED ITEMS */
+        $('.multilanguage:not(".lang-'+lang+',.exclude")').remove();
+
+        /* TRANSLATE SQUARESPACE-SPECIFIC TEXTS */
+        const dic = {
+            'Cart': 'Panier',
+            'SHOPPING CART': 'Votre panier',
+            'PRICE': 'PRIX',
+            'ITEM': 'PRODUIT',
+            'QTY.': 'QTÉ.',
+            'Size': 'Taille',
+            'Subtotal': 'Sous-total',
+            'CHECKOUT': 'PAYER',
+            'Size:': 'Taille :',
+            'Size: ': 'Taille : ',
+            'Quantity:': 'Quantité :',
+            'Quantity: ': 'Quantité :',
+            'Select Size': 'Sélectionner la taille',
+            'Add To Cart': 'Ajouter au panier',
+            'You have nothing in your shopping cart.': 'Votre panier est vide.',
+            'Continue Shopping': 'Retour à la boutique',
+            'Adding...': 'Ajout en cours...',
+            'Added!': 'Ajouté !',
+            '<div class="status-text">Adding…</div>': '<div class="status-text">Ajout en cours...</div>',
+            '<div class="status-text">Added!</div>': '<div class="status-text">Ajouté !</div>',
+        }
+        const translateNode = (e, that) => {
+            if (e && e.innerHTML && dic[e.innerHTML]) {
+                that.html(dic[e.innerHTML]);
+            }
+        }
+        // Any node without any child
+        $('*:not(:has(*))').each(function (i, e) {
+            const that = $(this);
+            translateNode(e, that);
+            // MutationObserver needed for the button dynamically changing text after clicking
+            if ($(this).hasClass('sqs-add-to-cart-button-inner')) {
+                const observer = new MutationObserver(() => translateNode(e, that));
+                observer.observe(this, {characterData: true, childList: true, attributes: true, subtree: true});
+            }
+        });
+        // For the 'Select size' select
+        $('div.variant-select-wrapper').each(function (i, e) {
+            if ($(this).attr('data-text') && dic[$(this).attr('data-text')]) {
+                $(this).attr('data-text', dic[$(this).attr('data-text')])
+            }
+        })
+        /* ADD WARNING BEFORE CHECHOUT */
+        if ($('button.checkout-button').length) {
+            $('<div />', {
+                align: 'right',
+                style: 'margin-top:40px;'
+            }).append('Pour des raisons techniques, la page de paiement sera en anglais.').insertBefore($('button.checkout-button'));
+        }   
+    }
+})
+</script>
